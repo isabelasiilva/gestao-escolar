@@ -1,0 +1,6 @@
+[submodule "gestao-escolar-api"]
+	path = gestao-escolar-api
+	url = http://github.com/isabelasiilva/gestao-escolar-api.git
+[submodule "gestao-escolar-frontend"]
+	path = gestao-escolar-frontend
+	url = http://github.com/isabelasiilva/gestao-escolar-frontend.git
