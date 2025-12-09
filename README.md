@@ -1,24 +1,32 @@
 # Gestão Escolar 
 
-Sistema de gerenciamento escolar desenvolvido para facilitar o cadastro e controle de alunos. Este projeto compõe o frontend da aplicação, consumindo uma API REST.
+Projeto desenvolvido para o gerenciamento de alunos, composto por uma API RESTful em .NET e um Frontend moderno em Angular.
 
 <img width="600" alt="home" src="https://github.com/user-attachments/assets/0efedbc4-14a8-44f3-91c8-14d8870ffc34" />
 
 
-## Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
-*   **[Angular 18](https://angular.dev/)**: Framework principal para construção da interface.
-*   **[PrimeNG 18](https://primeng.org/)**: Biblioteca de componentes de UI rica e responsiva.
-*   **[PrimeFlex 4](https://primeflex.org/)**: Utilitário CSS para layout e estilização ágil.
-*   **RxJS**: Biblioteca para programação reativa.
+### Backend
+- **.NET 8**: Framework principal para construção da API.
+- **Entity Framework Core**: ORM para acesso e manipulação do banco de dados.
+- **SQL Server**: Banco de dados relacional.
+- **Swagger**: Para documentação e teste dos endpoints da API.
+
+### Frontend
+- **Angular 18**: Framework para construção da interface de usuário.
+- **PrimeNG**: Biblioteca de componentes visuais ricos.
+- **PrimeFlex**: Sistema de grid e utilitários CSS flexíveis.
+- **Ngx-Mask**: Biblioteca para máscaras de input (ex: CPF).
 
 ## Funcionalidades
+* **Comunicação API**: Integração completa entre o frontend e o backend.
 
-*   **Cadastro de Alunos**: Formulário com validação para inserir novos alunos.
+*   **Cadastro de Alunos**: Interface amigável para registrar novos alunos com validação de dados.
 <img width="700" alt="cadastro-alunos" src="https://github.com/user-attachments/assets/3d0d0ef2-1713-43db-bdcd-719a78fb4ddb" />
 <img width="700" alt="cadastro-alunos-sucesso" src="https://github.com/user-attachments/assets/09a6fadc-5b47-47e1-9661-5cff66cb0372" />
 
-*   **Listagem de Alunos**: Visualização em tabela dos alunos cadastrados.
+*   **Listagem de Alunos**: Visualização em tabela dos alunos cadastrados na base de dados.
 
 
 <img width="700" alt="alunos-cadastrados" src="https://github.com/user-attachments/assets/1d86b344-4e85-47db-ac1c-b0006e06f12d" />
@@ -34,38 +42,64 @@ Sistema de gerenciamento escolar desenvolvido para facilitar o cadastro e contro
   
 *   **Integração API**: Comunicação completa (CRUD) com o backend.
 
-## Pré-requisitos
+## 🔧 Como Executar o Projeto
 
-Antes de rodar o projeto, certifique-se de ter instalado:
+### Pré-requisitos
+Certifique-se de ter instalado em sua máquina:
+- [Node.js](https://nodejs.org/) (versão LTS recomendada)
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- SQL Server (LocalDB ou instância dedicada)
 
-*   [Node.js](https://nodejs.org/) (versão LTS recomendada).
-*   API Backend rodando localmente na porta `https://localhost:7060`.
+### 1. Configuração do Backend (`gestao-escolar-api`)
 
-## Como Rodar o Projeto
+1. Navegue até a pasta da API:
+   ```bash
+   cd gestao-escolar-api
+   ```
 
-1.  **Instale as dependências**:
-    ```bash
-    npm install
-    ```
+2. Verifique a string de conexão no arquivo `appsettings.json`. O padrão geralmente aponta para o servidor local.
 
-2.  **Inicie o servidor de desenvolvimento**:
-    ```bash
-    ng serve
-    ```
-    Ou, para abrir automaticamente no navegador:
-    ```bash
-    ng serve -o
-    ```
+3. Atualize o banco de dados (EF Core):
+   ```bash
+   dotnet ef database update
+   ```
 
-3.  **Acesse a aplicação**:
-    Navegue para `http://localhost:4200/`.
+4. Inicie a aplicação:
+   ```bash
+   dotnet run
+   ```
+   A API estará disponível em `https://localhost:7060` (Swagger em `https://localhost:7060/swagger`).
 
-## Estrutura do Projeto
+### 2. Configuração do Frontend (`gestao-escolar-frontend`)
 
-*   `src/app/cadastro-alunos`: Componente responsável pelo formulário de cadastro.
-*   `src/app/alunos-cadastrados`: Componente responsável pela listagem e ações de edição/exclusão.
-*   `src/app/services`: Serviços para comunicação HTTP com a API.
-*   `src/app/models`: Modelos de dados TypeScript (Interfaces/Classes).
+1. Abra um novo terminal e navegue até a pasta do Frontend:
+   ```bash
+   cd gestao-escolar-frontend
+   ```
+
+2. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm start
+   ```
+   Ou:
+   ```bash
+   ng serve -o
+   ```
+
+4. Acesse a aplicação no navegador:
+   `http://localhost:4200`
 
 ---
-Desenvolvido como projeto de estudo prático.
+
+## 📂 Estrutura de Pastas
+
+*   `gestao-escolar-api/`: Contém todo o código do backend (.NET).
+*   `gestao-escolar-frontend/`: Contém todo o código do frontend (Angular).
+
+---
+Desenvolvido por Isabela Silva.
